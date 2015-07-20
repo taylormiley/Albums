@@ -18,12 +18,12 @@ var Eliminator = {
   artist: "ZZ Top",
   year: 1981,
   sales: 11000000,
-  number_of_hits: 4
+  number_of_hits: 4,
 };
 
 var masterOfPuppets = {
   name: "Master of Puppets",
-  artist: Metallica,
+  artist: "Metallica",
   year: 1986,
   sales: 16000000,
   number_of_hits: 3,
@@ -31,8 +31,10 @@ var masterOfPuppets = {
 
 var singTheSorrow = {
   name: "Sing the Sorrow",
-  artist: AFI,
-  year: 
+  artist: "AFI",
+  year: 2003,
+  sales: 15000000,
+  number_of_hits: 3,
 }
 
 // Create an array that holds records
@@ -42,14 +44,15 @@ var recordArray = [Eliminator, masterOfPuppets, singTheSorrow];
 
 
 
-/*
-Create a function that adds a new rating
-property to an album. The function should take
-two arguments.
-  1. album - The name of the album
-  2. rating - A numeric rating from 1-10
-*/
+
+// Create a function that adds a new rating
+// property to an album. The function should take
+// two arguments.
+//   1. album - The name of the album
+//   2. rating - A numeric rating from 1-10
+
 var rating = function (album, rating) {
+  album.rating = rating;
   
   // Add the rating to the album
 };
@@ -60,8 +63,8 @@ array and adds the same rating (of your choice)
 to each one.
 */
 var modifyAlbums = function() {
-  for () {
-    someFunction();
+  for (var i = 0; i < recordArray.length; i++) {
+    rating(recordArray[i], 8.5);
   }
 };
 
@@ -72,7 +75,7 @@ modifyAlbums();
 console.log(recordArray);
 
 // Display the new array in the browser
-var recordDom = document.getElementById(records);
+var recordDom = document.getElementById("records");
 
 /*
  JSON.stringify() is a built-in function
@@ -81,3 +84,5 @@ var recordDom = document.getElementById(records);
  object and lets you see it as a string.
 */
 recordDom.innerHTML = JSON.stringify(recordArray, null, 2);
+
+
